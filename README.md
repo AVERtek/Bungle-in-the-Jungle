@@ -1,1 +1,2 @@
-# Regis Silverado 2
+# Bungle in the Jungle
+by Steven Russell
