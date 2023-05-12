@@ -117,7 +117,7 @@ var getOutboundLink = function(url) {
 <style> 
  
 .container {
- column-count: 2;
+ column-count: 1;
  column-width: 250px;
  column-gap: 10px;
 }
@@ -156,207 +156,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="container">
     <div class="card">
       <img class="marginauto" src="images/Silverado Logo white.png" alt="Logo" style="width: 80%; height: 80%"> 
-     <h2 style="text-align: center;" markdown="1"><b style="color:#BDD7EE;"><p style="font-family:calibri"> NEWLY RENOVATED APARTMENTS & AMENITIES</p></h2></b> 
-     <h2 style="text-align: center;" markdown="1"><b style="color:#FFFFFF;"><p style="font-family:calibri"> COME DISCOVER WHAT'S NEW IN FRISCO!</p></h2></b>
-     <!--<h1 style="text-align: center;" markdown="1"><b style="color:#FFFFFF;"><p style="font-family:Freestyle Script"> Frisco Lifestyle</p></h1></b> -->
+     <h2 style="text-align: center;" markdown="1"><b style="color:#BDD7EE;"><p style="font-family:calibri"> STEVEN RUSSELL PRODUCTONS</p></h2></b> 
+     <h2 style="text-align: center;" markdown="1"><b style="color:#FFFFFF;"><p style="font-family:calibri"> DISCOVER 4D AUGMENTED REALITY!</p></h2></b>
+     <!--<h1 style="text-align: center;" markdown="1"><b style="color:#FFFFFF;"><p style="font-family:Freestyle Script"> Press AR Button</p></h1></b> -->
      <!--<img class="marginauto" src="images/Tag Line.png" alt="Logo" style="width: auto; height: 100px"> --> 
      </div>
 
- 
- <div class="card"> 
-   <model-viewer id="model-viewer" loading="eager" src="Models/bungle in the jungle.glb?sound=Sound/Dog_Bark_Panting_13.242 sec.wav" 
-  shadow-intensity="1" ar ar-modes="webxr scene-viewer quick-look" poster="images/Button Sit.png" camera-controls interaction-prompt="none" ios-src="Models/regis_standing_standing_final_5___1666648558541 (2).usdz"
-  autoplay camera-orbit="0deg 90deg 110%" id="model-viewer" id="reveal" alt="A 3D model carousel" style="width: 100%; height: 520px">
-  
-  <button slot="ar-button" style= "z-index: 9; background-color: #BDD7EE; border-radius: 4px; border: #000000; 
-  position: absolute; top: 16px; right: 16px; height: 40px; width: auto; ">
-  👆 <b style="color:#53616C;"><strong>4D/AR CLICK HERE</strong></b>
+<div class="card"> 
+  <model-viewer src="Models/bungle in the jungle.glb?sound=Sound/Bungle.wav" camera-controls camera-orbit="0deg 90deg 80%" autoplay animation-name="" id="reveal" id="model-viewer" 
+                loading="eager" ar ar-modes="scene-viewer webxr quick-look" ios-src="Models/DodgerGuy.reality" alt="Dodgers AB" auto-rotate-delay="0" ar-scale="auto" camera-controls alt="Bungle" 
+                style="width: 95%; height: 650px" ><button slot="ar-button" style="background-color: white; border-radius: 8px; border: 1 px solid black; position: absolute; top: 20px; right: 20px; ">
+      👆 <b style="color:#BDD7EE;"><strong>AR HERE</strong></b></button>   
   </button>
-
-  <!--<div id="ar-prompt">
-    <img src="images/hand.png">
-  </div>
-
-  <button id="ar-failure">
-    AR is not tracking!
-  </button> -->
-
-    <div class="slider">
-    <div class="slides">
-    <div style="background-color: #53616C; background-position:bottom center"> 
-     <button class="slide selected" onclick="switchSrc(this, 'regis_standing_lookingup_final_4b___1666752207448')" style="background-size: 90%; background-image:url('images/Button Stay2.png');">
-     </button><button class="slide" onclick="switchSrc(this, 'regis_standing_sit_standing_lookup_final_10___1666756088204')" style="background-size: 90%; background-image:url('images/Button Sit2.png');">
-     </button><button class="slide" onclick="switchSrc(this, 'regis_standing_lay_standing_lookup_final_1b___1666745898045')" style="background-size: 90%; background-image:url('images/Button Lay2.png');">
-     </button><button class="slide" onclick="switchSrc(this, 'new_dancing_dog_long_hip_hop_2___1666746162500')" style="background-size: 90%; background-image:url('images/Button Dance2.png');">
-     </button><button class="slide" onclick="switchSrc(this, 'regis_catching_scalebone_final_1___1666908892991')" style="background-size: 90%; background-image:url('images/Button Treat2.png');">
-   </button></div>
-   </div></div> 
-      
 </model-viewer>
-
-<script type="module">
-  const modelViewer = document.querySelector("model-viewer");
-
-  window.switchSrc = (element, name) => {
-    const base = "Models/" + name;
-    modelViewer.src = base + '.glb';
-    modelViewer.sound = base + '.wav'; 
-    modelViewer.poster = base + '.png';
-    const slides = document.querySelectorAll(".slide");
-    slides.forEach((element) => {element.classList.remove("selected");});
-    element.classList.add("selected");
-  };
-
-  document.querySelector(".slider").addEventListener('beforexrselect', (ev) => {
-    // Keep slider interactions from affecting the XR scene.
-    ev.preventDefault();
-  });
-</script>
-
-<style>
-  /* This keeps child nodes hidden while the element loads */
-  :not(:defined) > * {
-    display: none;
-  }
-
-  model-viewer {
-    background-color: #53616C;
-    overflow-x: hidden;
-    --poster-color: #53616C;
-  }
-
-  #ar-button {
-    background-image: url(../../assets/ic_view_in_ar_new_googblue_48dp.png);
-    background-repeat: no-repeat;
-    background-size: 20px 20px;
-    background-position: 12px 50%;
-    background-color: #fff;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    white-space: nowrap;
-    bottom: 132px;
-    padding: 0px 16px 0px 40px;
-    font-family: Roboto Regular, Helvetica Neue, sans-serif; calibri;
-    font-size: 14px;
-    color:#4285f4;
-    height: 36px;
-    line-height: 36px;
-    border-radius: 18px;
-    border: 1px solid #FFFFFF;
-  }
-
-  #ar-button:active {
-    background-color: #BDD7EE;
-  }
-
-  #ar-button:focus {
-    outline: none;
-  }
-
-  #ar-button:focus-visible {
-    outline: 1px solid #000000;
-  }
-
-  @keyframes circle {
-    from { transform: translateX(-50%) rotate(0deg) translateX(50px) rotate(0deg); }
-    to   { transform: translateX(-50%) rotate(360deg) translateX(50px) rotate(-360deg); }
-  }
-
-  @keyframes elongate {
-    from { transform: translateX(100px); }
-    to   { transform: translateX(-100px); }
-  }
-
-  model-viewer > #ar-prompt {
-    position: absolute;
-    left: 50%;
-    bottom: 175px;
-    animation: elongate 2s infinite ease-in-out alternate;
-    display: none;
-  }
-
-  model-viewer[ar-status="session-started"] > #ar-prompt {
-    display: block;
-  }
-
-  model-viewer > #ar-prompt > img {
-    animation: circle 4s linear infinite;
-  }
-
-  model-viewer > #ar-failure {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 175px;
-    display: none;
-  }
-
-  model-viewer[ar-tracking="not-tracking"] > #ar-failure {
-    display: block;
-  }
-
-  .slider {
-    width: 100%;
-    text-align: center;
-    overflow: hidden;
-    position: absolute;
-    bottom: 16px;
-  }
-
-  .slides {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .slide {
-    scroll-snap-align: start;
-    flex-shrink: 0;
-    width: 100px;
-    height: 100px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: #fff;
-    margin-right: 10px;
-    border-radius: 10px;
-    border: none;
-    display: flex;
-  }
-
-  .slide.selected {
-    border: 6px solid #0539BE;
-  }
-
-  .slide:focus {
-    outline: none;
-  }
-
-  .slide:focus-visible {
-    outline: 1px solid #0539BE;
-  }
-
-</style>
-</div>
-     <section class="attribution">
+            
+<section class="attribution">
         <div>
           <span>
-            <h1 style="text-align: center;" markdown="1"><b style="color:#FFFFFF"><p style="font-family:calibri">Regis Speak</p></h1>
+            <h1 style="text-align: center;" markdown="1">Play Song</h1>
               <p align="center">
               <span>
               <audio controls autoplay loop id="sound">
-                <source src="Sound/Dog_Bark_Panting_13.242 sec.wav"/>
-                <source src="sound=Sound/Regis Bone Catch.wav"/>
+                <source src="Sound/Bungle.wav"/>
               </audio
             ></span> 
              </p>
             </span>
-        </div>
+         </div>
    </section>
-   <script>    
+   <script>
         window.addEventListener("load", () => {
           Sync("#model-viewer", "#sound");
         });
@@ -365,12 +193,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
    <div style="text-align:center">   
    <button onclick="location.href='https://avertek.github.io/Regis-Silverado-1/'" type="button" slot="" 
                     style="z-index: 9; background-color: #FFFFFF; border-radius: 8px; border: 1 px solid white; position: static; height: 35px; width: auto;
-                          color:#53616C; font-family:calibri"><strong>Hear Regis' Story</strong>
+                          color:#53616C; font-family:calibri"><strong>Play, Dance, Sing</strong>
        </button> 
          </div>
          <br><br>                       
     
-     <div class="card">
+     <!--<div class="card">
      <h2 style="text-align: center;" markdown="1"><b style="color:#BDD7EE"><p style="font-family:calibri"><b>SPACIOUS:</b><a href="https://www.livesilveradofrisco.com/floorplans/?utm_source=AVERtek&utm_medium=AR" onclick="getOutboundLink('https://www.livesilveradofrisco.com/floorplans/?utm_source=AVERtek&utm_medium=AR');return false;"><b style="color:#FFFFFF;"><b> FLOORPLANS</b></b></h2></a></p></a></h2>
      <h2 style="text-align: center;" markdown="1"><b style="color:#BDD7EE"><p style="font-family:calibri"><b>VIRTUAL:</b><a href="https://www.livesilveradofrisco.com/virtualtours/?utm_source=AVERtek&utm_medium=AR" onclick="getOutboundLink('https://www.livesilveradofrisco.com/virtualtours/?utm_source=AVERtek&utm_medium=AR');return false;"><b style="color:#FFFFFF;"><b> TOURS</b></b></h2></a></p></a></h2>
      <h2 style="text-align: center;" markdown="1"><b style="color:#BDD7EE"><p style="font-family:calibri"><b>CONTACT:</b><a href="https://www.livesilveradofrisco.com/contactus/?utm_source=AVERtek&utm_medium=AR" onclick="getOutboundLink('https://www.livesilveradofrisco.com/contactus/?utm_source=AVERtek&utm_medium=AR');return false;"><b style="color:#FFFFFF;"><b> US</b></b></h2></a></p></a></h2>
@@ -379,7 +207,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
      <h2 style="text-align: center;" markdown="1"><b style="color:#BDD7EE"><p style="font-family:calibri"><b>APPLY:</b><a href="https://livesilveradofrisco.securecafe.com/onlineleasing/silverado0/guestlogin.aspx?PropLeadSource_1411089=portal&_yTrackUser=MjIwMjQ5NTk0NCM2ODU2NjA2OTQ%253d-p8knzvVdVOM%253d&_yTrackVisit=MzcwNTM0MDU2MSMxNzY5NTAzNTc%253d-QHFMCPUVync%253d&_yTrackReqDT=41422120231004&_ga=2.237352708.563806798.1681162610-2081645018.1681162610?utm_source=AVERtek&utm_medium=AR" onclick="getOutboundLink('https://livesilveradofrisco.securecafe.com/onlineleasing/silverado0/guestlogin.aspx?PropLeadSource_1411089=portal&_yTrackUser=MjIwMjQ5NTk0NCM2ODU2NjA2OTQ%253d-p8knzvVdVOM%253d&_yTrackVisit=MzcwNTM0MDU2MSMxNzY5NTAzNTc%253d-QHFMCPUVync%253d&_yTrackReqDT=41422120231004&_ga=2.237352708.563806798.1681162610-2081645018.1681162610?utm_source=AVERtek&utm_medium=AR');return false;"><b style="color:#FFFFFF;"><b> NOW</b></b></h2></a></p></a></h2> 
      <br>
      <h2 style="text-align: center;" markdown="1"><b style="color:#FFFFFF;"><p style="font-family:calibri"> 8400 Stonebrook Parkway, Frisco, TX 75034</p></h2></b>
-   </div>
+   </div> -->
    
    <div class="card">
     <img class="marginauto" src="images/AR Instructions wht-trans3.png" style="max-width: 100%; height: 350px">
